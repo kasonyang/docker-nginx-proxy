@@ -1,0 +1,16 @@
+kind: pipeline
+type: docker
+name: default
+
+steps:
+  - name: build
+    image: docker:latest
+    commands:
+      - docker build -t nginx-proxy:local .
+  - name: publish
+    image: ks-rsync:local
+    when:
+      branch:
+        - main
+    commands:
+      - rsync-to-remote *
