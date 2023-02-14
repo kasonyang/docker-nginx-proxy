@@ -45,5 +45,6 @@ docker run -d --name nginx-proxy \
        -v ./vhosts:/etc/nginx-proxy/vhosts:ro \
        -v ./data:/var/nginx-proxy \
        -p 80:80 \
+       -p 443:443 \
        kasonyang/nginx-proxy:latest
 ```
