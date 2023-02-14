@@ -1,6 +1,6 @@
 # Overview
 
-A reserve proxy base on nginx with the following features:
+A reverse proxy base on nginx with the following features:
 
 * Request ssl certificates automatically using [acme.sh](https://github.com/acmesh-official/acme.sh ).
 * Easy to configure.
