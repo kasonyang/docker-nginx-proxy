@@ -24,8 +24,8 @@ Then run:
 
 ```
 docker run -d --name nginx-proxy \
-       -v ./vhosts:/etc/nginx-proxy/vhosts:ro \
-       -v ./data:/var/nginx-proxy \
+       -v "$PWD/vhosts":/etc/nginx-proxy/vhosts:ro \
+       -v "$PWD/data":/var/nginx-proxy \
        -p 80:80 \
        kasonyang/nginx-proxy:latest
 ```
@@ -42,8 +42,8 @@ The container will request free ssl certificates automatically on container star
 docker run -d --name nginx-proxy \
        --env AUTO_SSL=on \
        --env AUTO_SSL_EMAIL=<YOUR_EMAIL> \
-       -v ./vhosts:/etc/nginx-proxy/vhosts:ro \
-       -v ./data:/var/nginx-proxy \
+       -v "$PWD/vhosts":/etc/nginx-proxy/vhosts:ro \
+       -v "$PWD/data":/var/nginx-proxy \
        -p 80:80 \
        -p 443:443 \
        kasonyang/nginx-proxy:latest
